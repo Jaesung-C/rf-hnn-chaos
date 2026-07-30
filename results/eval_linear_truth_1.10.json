@@ -1,0 +1,10 @@
+{
+  "family": "linear",
+  "tag": "truth",
+  "control": 1.1,
+  "occupancy": 37.642857142857146,
+  "lambda_mean": 0.09497892908029663,
+  "complete_fraction": 1.0,
+  "escaped_fraction": 0.0,
+  "lyapunov_valid_fraction": 1.0
+}

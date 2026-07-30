@@ -1,0 +1,10 @@
+{
+  "family": "mu2",
+  "tag": "rf14",
+  "control": 1.3,
+  "occupancy": 22.678571428571427,
+  "lambda_mean": 0.01582387066005366,
+  "complete_fraction": 1.0,
+  "escaped_fraction": 0.0,
+  "lyapunov_valid_fraction": 1.0
+}

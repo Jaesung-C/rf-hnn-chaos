@@ -1,0 +1,10 @@
+{
+  "family": "mu2",
+  "tag": "truth",
+  "control": 1.05,
+  "occupancy": 18.607142857142858,
+  "lambda_mean": 0.013090196159661864,
+  "complete_fraction": 1.0,
+  "escaped_fraction": 0.0,
+  "lyapunov_valid_fraction": 1.0
+}

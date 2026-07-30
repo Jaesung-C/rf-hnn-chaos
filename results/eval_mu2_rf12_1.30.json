@@ -1,0 +1,10 @@
+{
+  "family": "mu2",
+  "tag": "rf12",
+  "control": 1.3,
+  "occupancy": 22.857142857142858,
+  "lambda_mean": 0.01606008457022124,
+  "complete_fraction": 1.0,
+  "escaped_fraction": 0.0,
+  "lyapunov_valid_fraction": 1.0
+}

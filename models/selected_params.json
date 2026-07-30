@@ -1,0 +1,26 @@
+{
+  "linear": {
+    "selected": {
+      "activation": "gelu",
+      "width": 2000,
+      "state_scale": 0.4157306769298731,
+      "control_scale": 0.026608168286532247,
+      "gain_layer2": 2.4148562373140905,
+      "log10_ridge": -10.362536920581595
+    },
+    "validation_rmse": 1.014982159632025e-06,
+    "source": "paper-selected hyperparameters; held-out validation RMSE recomputed with this repository's float64 pipeline"
+  },
+  "mu2": {
+    "selected": {
+      "activation": "gelu",
+      "width": 1800,
+      "state_scale": 0.3782622051639155,
+      "control_scale": 0.042087422342161396,
+      "gain_layer2": 1.0426373279829284,
+      "log10_ridge": -10.08561464813523
+    },
+    "validation_rmse": 1.6637219400938674e-05,
+    "source": "paper-selected hyperparameters; held-out validation RMSE recomputed with this repository's float64 pipeline"
+  }
+}

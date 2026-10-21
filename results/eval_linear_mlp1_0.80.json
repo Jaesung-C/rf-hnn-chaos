@@ -1,0 +1,10 @@
+{
+  "family": "linear",
+  "tag": "mlp1",
+  "control": 0.8,
+  "occupancy": 19.035714285714285,
+  "lambda_mean": 0.018101733440788213,
+  "complete_fraction": 1.0,
+  "escaped_fraction": 0.0,
+  "lyapunov_valid_fraction": 1.0
+}

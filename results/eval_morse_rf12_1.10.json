@@ -1,0 +1,10 @@
+{
+  "family": "morse",
+  "tag": "rf12",
+  "control": 1.1,
+  "occupancy": 43.142857142857146,
+  "lambda_mean": 0.1719464677714245,
+  "complete_fraction": 1.0,
+  "escaped_fraction": 0.0,
+  "lyapunov_valid_fraction": 1.0
+}

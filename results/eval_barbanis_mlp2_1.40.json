@@ -1,0 +1,10 @@
+{
+  "family": "barbanis",
+  "tag": "mlp2",
+  "control": 1.4,
+  "occupancy": 11.821428571428571,
+  "lambda_mean": 0.019124525811214096,
+  "complete_fraction": 1.0,
+  "escaped_fraction": 0.0,
+  "lyapunov_valid_fraction": 1.0
+}

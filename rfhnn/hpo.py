@@ -9,14 +9,12 @@ softplus (one seeded TPE study each); the best trial across activations wins.
 
 from __future__ import annotations
 
-import numpy as np
-
 from .model import fit_readout, field_rmse, trunk_from_params
 
 TRIALS = 100
 STARTUP_TRIALS = 24
 FEATURE_SEED = 0
-SAMPLER_SEEDS = {"linear": 1000, "mu2": 1001}
+SAMPLER_SEEDS = {"linear": 1000, "mu2": 1001, "barbanis": 1002, "morse": 1003}
 FIT_STATES_PER_CONTROL = 8000
 VALIDATION_STATES = 3000
 VALIDATION_SEED = 999

@@ -1,0 +1,10 @@
+{
+  "family": "morse",
+  "tag": "mlp1",
+  "control": 1.1,
+  "occupancy": 41.82142857142857,
+  "lambda_mean": 0.09508324417767103,
+  "complete_fraction": 1.0,
+  "escaped_fraction": 0.0,
+  "lyapunov_valid_fraction": 1.0
+}

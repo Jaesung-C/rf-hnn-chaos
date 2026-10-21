@@ -1,4 +1,4 @@
-"""Two-degree-of-freedom Hamiltonian families, float64 throughout.
+"""Two-degree-of-freedom Hamiltonian families.
 
 State order is (x, y, p_x, p_y); the control parameter enters the potential.
 Training data are independent states rejection-sampled on the energy shell
@@ -112,4 +112,72 @@ class BoundedHH(_Family):
         return np.stack((px, py, -fx, -fy), axis=-1)
 
 
-FAMILIES = {"linear": LinearHH(), "mu2": BoundedHH()}
+class Barbanis(_Family):
+    """Barbanis-type coupling c x y^2 with a quartic confining wall
+    (kappa = 0.3)."""
+
+    name = "barbanis"
+    E0 = 0.18
+    KAPPA = 0.3
+    training_controls = (0.8, 1.0, 1.2)
+    search_fit_controls = (0.8, 1.2)
+    validation_control = 1.0
+    box_x, box_y, batch_factor = (-1.1, 1.1), (-1.1, 1.1), 8
+    section_y = (-1.1, 1.1)
+    section_py = (-np.sqrt(2.0 * E0 + 1.0), np.sqrt(2.0 * E0 + 1.0))
+    dt, crossings, max_steps, state_limit = 0.04, 20, 15000, 5.2
+    occupancy_range, occupancy_min_points = (-1.1, 1.1, -1.1, 1.1), 3
+
+    @classmethod
+    def potential(cls, x, y, c):
+        x = np.asarray(x)
+        y = np.asarray(y)
+        radius2 = x * x + y * y
+        return 0.5 * radius2 + c * x * y * y + cls.KAPPA * radius2**2
+
+    @classmethod
+    def vector_field(cls, state, c):
+        state = np.asarray(state)
+        x, y, px, py = np.moveaxis(state, -1, 0)
+        radius2 = x * x + y * y
+        fx = x + c * y * y + 4.0 * cls.KAPPA * x * radius2
+        fy = y + 2.0 * c * x * y + 4.0 * cls.KAPPA * y * radius2
+        return np.stack((px, py, -fx, -fy), axis=-1)
+
+
+class MorsePair(_Family):
+    """Two Morse oscillators (D = a = 1) with a bilinear coupling c x y, which
+    is not globally confining; escaped orbits are recorded."""
+
+    name = "morse"
+    E0 = 0.18
+    D = 1.0
+    A = 1.0
+    training_controls = (0.3, 0.4, 0.5)
+    search_fit_controls = (0.3, 0.5)
+    validation_control = 0.4
+    box_x, box_y, batch_factor = (-0.8, 1.5), (-0.8, 1.5), 8
+    section_y, section_py = (-0.8, 1.5), (-np.sqrt(2.0 * E0), np.sqrt(2.0 * E0))
+    dt, crossings, max_steps, state_limit = 0.05, 50, 11000, 4.0
+    occupancy_range, occupancy_min_points = (-0.8, 0.8, -0.7, 0.7), 3
+
+    @classmethod
+    def potential(cls, x, y, c):
+        x = np.asarray(x)
+        y = np.asarray(y)
+        return (cls.D * (1.0 - np.exp(-cls.A * x)) ** 2
+                + cls.D * (1.0 - np.exp(-cls.A * y)) ** 2 + c * x * y)
+
+    @classmethod
+    def vector_field(cls, state, c):
+        state = np.asarray(state)
+        x, y, px, py = np.moveaxis(state, -1, 0)
+        exp_x = np.exp(-cls.A * x)
+        exp_y = np.exp(-cls.A * y)
+        dvx = 2.0 * cls.D * cls.A * exp_x * (1.0 - exp_x) + c * y
+        dvy = 2.0 * cls.D * cls.A * exp_y * (1.0 - exp_y) + c * x
+        return np.stack((px, py, -dvx, -dvy), axis=-1)
+
+
+FAMILIES = {"linear": LinearHH(), "mu2": BoundedHH(), "barbanis": Barbanis(),
+            "morse": MorsePair()}

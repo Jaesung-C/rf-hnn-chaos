@@ -1,0 +1,10 @@
+{
+  "family": "mu2",
+  "tag": "mlp0",
+  "control": 1.2,
+  "occupancy": 20.785714285714285,
+  "lambda_mean": 0.01907797782063588,
+  "complete_fraction": 1.0,
+  "escaped_fraction": 0.0,
+  "lyapunov_valid_fraction": 1.0
+}

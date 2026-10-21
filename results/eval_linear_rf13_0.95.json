@@ -1,0 +1,10 @@
+{
+  "family": "linear",
+  "tag": "rf13",
+  "control": 0.95,
+  "occupancy": 22.642857142857142,
+  "lambda_mean": 0.026575506194619045,
+  "complete_fraction": 1.0,
+  "escaped_fraction": 0.0,
+  "lyapunov_valid_fraction": 1.0
+}

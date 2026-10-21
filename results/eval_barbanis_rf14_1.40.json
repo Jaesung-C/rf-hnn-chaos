@@ -1,0 +1,10 @@
+{
+  "family": "barbanis",
+  "tag": "rf14",
+  "control": 1.4,
+  "occupancy": 13.5,
+  "lambda_mean": 0.01722596716339754,
+  "complete_fraction": 1.0,
+  "escaped_fraction": 0.0,
+  "lyapunov_valid_fraction": 1.0
+}

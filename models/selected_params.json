@@ -22,5 +22,29 @@
     },
     "validation_rmse": 1.6637219400938674e-05,
     "source": "paper-selected hyperparameters; held-out validation RMSE recomputed with this repository's float64 pipeline"
+  },
+  "barbanis": {
+    "selected": {
+      "activation": "softplus",
+      "width": 1800,
+      "state_scale": 0.3732596796418703,
+      "control_scale": 0.020062464785944627,
+      "gain_layer2": 0.03400922034764519,
+      "log10_ridge": -12.01341435383124
+    },
+    "validation_rmse": 0.00013119196199549735,
+    "source": "paper-selected hyperparameters and held-out validation RMSE of the paper's search"
+  },
+  "morse": {
+    "selected": {
+      "activation": "softplus",
+      "width": 2000,
+      "state_scale": 0.8653973625707668,
+      "control_scale": 0.02034694850509746,
+      "gain_layer2": 0.8878257067953473,
+      "log10_ridge": -8.945561151822012
+    },
+    "validation_rmse": 1.168258333177018e-05,
+    "source": "paper-selected hyperparameters and held-out validation RMSE of the paper's search"
   }
 }

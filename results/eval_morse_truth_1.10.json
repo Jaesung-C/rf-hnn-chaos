@@ -1,0 +1,10 @@
+{
+  "family": "morse",
+  "tag": "truth",
+  "control": 1.1,
+  "occupancy": 42.142857142857146,
+  "lambda_mean": 0.17182668621977484,
+  "complete_fraction": 1.0,
+  "escaped_fraction": 0.0,
+  "lyapunov_valid_fraction": 1.0
+}

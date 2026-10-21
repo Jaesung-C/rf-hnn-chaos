@@ -1,0 +1,10 @@
+{
+  "family": "barbanis",
+  "tag": "truth",
+  "control": 1.6,
+  "occupancy": 14.821428571428571,
+  "lambda_mean": 0.06260677430651733,
+  "complete_fraction": 1.0,
+  "escaped_fraction": 0.0,
+  "lyapunov_valid_fraction": 1.0
+}
